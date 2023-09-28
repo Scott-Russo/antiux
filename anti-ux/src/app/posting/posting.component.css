@@ -1,3 +1,7 @@
+.background {
+    background-color: blue;
+}
+
 body {
     display: flex;
     white-space: pre-line;
@@ -5,6 +9,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+.error-message{
+    color: navy;
 }
 
 .content {

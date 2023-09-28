@@ -1,17 +1,19 @@
-<body>
-    <div>
-        <p>posting works! {{forumName}}</p>
-    </div>
+<div class="background" >
+    <body>
+        <div *ngIf="correctForum" class="content">
+            <p class="Title">Welcome to {{forumName}} forum!</p>
+            <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
+        
+        
+            <form [formGroup]="postForm" (ngSubmit)="submitPost()">
+                <label for="postContent">Post Content:</label>
+                <textarea formControlName="postContent" id="postContent" name="postContent" required></textarea>
 
-    <div>
-        <p *ngIf="errorMessage">{{errorMessage}}</p>
-    </div>
-    
-    <form (ngSubmit)="submitPost()">
-        <label for="postContent">Post  Content:</label>
-        <textarea id="postContent" name="postContent" required></textarea>
-
-        <button type="submit">Post</button>
-    </form>
-
-</body>
+                <button type="submit">{{postButton}}</button>
+            </form>
+        </div>
+        <div *ngIf="!correctForum">
+            This is Not Your Forum
+        </div>
+    </body>
+</div>
