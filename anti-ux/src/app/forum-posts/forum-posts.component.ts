@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ForumService } from '../forum.service';
 
+type buttonType = 'Next Page' | 'First Page';
+
 @Component({
   selector: 'app-forum-posts',
   templateUrl: './forum-posts.component.html',
@@ -9,8 +11,12 @@ import { ForumService } from '../forum.service';
 export class ForumPostsComponent {
   public randomizedForums: string[];
   public currentForums: string[];
+
   public startIndex = 0;
   public itemsPerPage = 5;
+
+  public buttonOneName: buttonType = 'Next Page';
+  public buttonTwoName: buttonType = 'First Page';
 
   constructor(public forumService: ForumService){
     this.randomizedForums = shuffle(forumService.getForums());
@@ -21,6 +27,31 @@ export class ForumPostsComponent {
   updateCurrentForums(): string[] {
     return this.randomizedForums.slice(this.startIndex, this.startIndex + this.itemsPerPage);
   }
+
+  clickedButtonOne(): void {
+    if(this.buttonOneName == 'Next Page'){
+      this.nextPage();
+    }
+    else{
+      this.goFirstPage();
+    }
+    this.swapStrings();
+  }
+
+  clickedButtonTwo(): void{
+    if(this.buttonTwoName == 'Next Page'){
+      this.nextPage();
+    }
+    else{
+      this.goFirstPage();
+    }
+    this.swapStrings();
+  }
+
+  goFirstPage(): void{
+    this.startIndex = 0;
+    this.currentForums = this.updateCurrentForums();
+  }
   
   nextPage(): void {
     //assigns either to i + 5 or 0,
@@ -28,6 +59,11 @@ export class ForumPostsComponent {
     this.currentForums = this.updateCurrentForums();
   }
 
+  swapStrings(): void {
+    if(Math.random() > 0.7){
+      [this.buttonOneName, this.buttonTwoName] = [this.buttonTwoName, this.buttonOneName];
+    }
+  }
 }
 
 //took this from stackoverflow, implementation of fisher yates

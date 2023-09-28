@@ -6,11 +6,11 @@ body {
     height: 100vh;
     margin: 0;
 }
-/* Styling for the main content */
+
 .content {
     text-align: center;
 }
-/* Styling for the "Got it" button */
+
 .button {
     padding: 10px 20px;
     background-color: #007BFF;
