@@ -22,6 +22,11 @@ const routes: Routes = [
     path: 'confirm-human',
     component: ConfirmHumanComponent,
   },
+  {
+    path: '',
+    redirectTo: '/goal',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@ import { PostingComponent } from './posting/posting.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     RouterModule,
   ],
   providers: [],
