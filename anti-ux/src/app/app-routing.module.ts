@@ -15,7 +15,7 @@ const routes: Routes = [
     component: ForumPostsComponent,
   },
   {
-    path: 'posting',
+    path: 'posting/:forumName',
     component: PostingComponent,
   },
   {

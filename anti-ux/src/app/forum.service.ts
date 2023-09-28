@@ -7,6 +7,15 @@ export class ForumService {
   private forums: string[] = [
     'healthy plants',
     'unhealthy plants',
+    'super healthy plants',
+    'super unhealthy plants',
+    'very very bad for you',
+    'very very good for you',
+    'medium',
+    'bad',
+    'worse',
+    'the absolute worsest',
+    'part2',
   ];
 
   private goalForum: string = this.forums[0];

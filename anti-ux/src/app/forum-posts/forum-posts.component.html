@@ -1,3 +1,8 @@
 <body>
-    <p>forum-posts works!</p>
+    <div>
+        <li *ngFor="let forum of currentForums">
+        <a [routerLink]="['/posting', forum]">{{forum}}</a>
+        </li>
+    </div>
+    <button (click)="nextPage()">Next Page</button>
 </body>

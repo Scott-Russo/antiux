@@ -1,1 +1,17 @@
-<p>posting works!</p>
+<body>
+    <div>
+        <p>posting works! {{forumName}}</p>
+    </div>
+
+    <div>
+        <p *ngIf="errorMessage">{{errorMessage}}</p>
+    </div>
+    
+    <form (ngSubmit)="submitPost()">
+        <label for="postContent">Post  Content:</label>
+        <textarea id="postContent" name="postContent" required></textarea>
+
+        <button type="submit">Post</button>
+    </form>
+
+</body>
