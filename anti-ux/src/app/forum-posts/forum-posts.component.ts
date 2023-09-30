@@ -13,7 +13,7 @@ export class ForumPostsComponent {
   public currentForums: string[];
 
   public startIndex = 0;
-  public itemsPerPage = 5;
+  public itemsPerPage = 8;
 
   public buttonOneName: buttonType = 'Next Page';
   public buttonTwoName: buttonType = 'First Page';
@@ -60,7 +60,7 @@ export class ForumPostsComponent {
   }
 
   swapStrings(): void {
-    if(Math.random() > 0.7){
+    if(Math.random() > 0.8){
       [this.buttonOneName, this.buttonTwoName] = [this.buttonTwoName, this.buttonOneName];
     }
   }
