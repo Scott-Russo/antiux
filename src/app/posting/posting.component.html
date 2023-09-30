@@ -1,0 +1,19 @@
+<div class="background" >
+    <body>
+        <div *ngIf="correctForum" class="content">
+            <p class="Title">Welcome to {{forumName}} forum!</p>
+            <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
+        
+        
+            <form [formGroup]="postForm" (ngSubmit)="submitPost()">
+                <label for="postContent">Post Content:</label>
+                <textarea formControlName="postContent" id="postContent" name="postContent" required></textarea>
+
+                <button type="submit">{{postButton}}</button>
+            </form>
+        </div>
+        <div *ngIf="!correctForum">
+            This is Not Your Forum
+        </div>
+    </body>
+</div>

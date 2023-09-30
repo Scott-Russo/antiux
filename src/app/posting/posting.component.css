@@ -1,0 +1,28 @@
+.background {
+    background-color: blue;
+}
+
+body {
+    display: flex;
+    white-space: pre-line;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.error-message{
+    color: navy;
+}
+
+.content {
+    text-align: center;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
